@@ -1,6 +1,6 @@
-title:            Site Title
+title:            정보가 미래다
 description:      Describe your website here.
-disqus_shortname: 
+disqus_shortname: mc3767
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
@@ -14,14 +14,14 @@ owner:
   bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
   email:          you@email.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
+  twitter:  mc3767      
+  facebook: mc3767      
+  github:  mc3767       
+  stackexchange: mc3767 
+  linkedin: mc3767       
+  instagram: mc3767     
+  flickr: mc3767        
+  tumblr: mc3767         
   # google plus id, include the '+', eg +mmistakes
   google_plus:
 
@@ -65,6 +65,7 @@ kramdown:
 include: 
   - .htaccess
 exclude: 
+  - "*.sh"
   - "*.less"
   - "*.sublime-project"
   - "*.sublime-workspace"
