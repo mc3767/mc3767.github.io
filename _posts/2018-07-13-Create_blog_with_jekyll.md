@@ -85,5 +85,6 @@ jekyll 3.8.3 | Error:  Invalid scheme format: {"feature"=>"abstract-10.jpg", "cr
 ## 참고 사이트
 https://jekyllrb-ko.github.io/docs/home/
 https://xho95.github.io/blog/github/pages/jekyll/minima/theme/2017/03/04/Jekyll-Blog-with-Minima.html
+https://www.taniarascia.com/make-a-static-website-with-jekyll/
 
 
