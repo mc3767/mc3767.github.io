@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample Post
+title: SQL Server Management Studio의 테이블 디자이너에 설명(Description) 추가하기
 description: "SQL Server - showing extra columns in design viewß"
 modified: 2018-07-15
 tags: [ssms, sql, design]
