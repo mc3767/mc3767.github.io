@@ -68,7 +68,37 @@ $ bundle exec jekyll serve
 브라우저를 실행하고 주소창에 http://localhost:4000 를 입력하면 다음과 같은 페이지를 볼 수 있습니다.
 
 
+
+## Update jekyll
+
+BJekyll 개발에 참여하기 전에, 자신이 현재 최신 버전을 사용하고 있는지 확인하고 싶을 수도 있습니다. 현재 설치된 Jekyll 의 버전을 확인하려면, 이 명령어들 중 하나를 실행하세요
+
+```
+jekyll --version
+gem list jekyll
+```
+
+YRubyGems 를 사용해서 Jekyll 의 최신 버전을 확인할 수 있습니다. 다른 방법으로는 gem outdated 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 루비 젬들 중 업데이트가 준비물의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요
+
+```
+bundle update jekyll
+```
+
+Bundler 가 설치되어있지 않은 경우에는, 대신 다음과 같이 실행하세요
+
+```
+gem update jekyll
+```
+
+Rubygems 를 최신 버전으로 업그레이드 하려면, 이렇게 실행하세요
+
+```
+gem update --system
+```
+
 ## TroubleShooting
+
+
 
 $ bundle exe jekyll serve
 Configuration file: /Users/jeon/Documents/myBlog/_config.yml
@@ -83,7 +113,7 @@ Configuration file: /Users/jeon/Documents/myBlog/_config.yml
 jekyll 3.8.3 | Error:  Invalid scheme format: {"feature"=>"abstract-10.jpg", "credit"=>"dargadgetz", "creditlink"=>"http      
 
 ## 참고 사이트
-https://jekyllrb-ko.github.io/docs/home/
+https://jekyllrb-ko.github.io/docs/installation/
 https://xho95.github.io/blog/github/pages/jekyll/minima/theme/2017/03/04/Jekyll-Blog-with-Minima.html
 https://www.taniarascia.com/make-a-static-website-with-jekyll/
 
