@@ -6,22 +6,24 @@ modified: 2018-07-15
 tags: [Delphi, Command line build]
 ---
 
-멤버가 조금씩 다른 개발환경에서 개발하므로 일치된 배포환경을 위해서 독립된 PC에 Delphi를 설치해서 배포하는데 IDE로 빌드하려면 자동화가 어렵게 된다.
+## Command line으로 빌드할 필요성
+
+멤버가 조금씩 다른 개발환경에서 개발하므로 일치된 배포환경을 위해서 독립된 PC에 Delphi를 설치해서 배포하는데 문제는 IDE로 빌드하려면 자동화가 어렵게 된다.
 
 그래서 찾아보니 MSBuild를 사용하면 command line으로 빌드가 가능하므로 자동화에 한층쉬워진다.
 
 
 
 
-## MSBuild 명령을 사용하여 프로젝트 빌드 (원문)
 
-http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Building_a_Project_Using_an_MSBuild_Command#Building_a_Project_Using_the_Command_Line
 
-IDE는 Microsoft MSBuild 엔진을 사용하여 프로젝트를 빌드합니다. IDE가 모든 처리를 위해 MSBuild에 대한 지식이 없어도 프로젝트를 빌드 할 수 있습니다. 그러나 여기에서 설명하는 MSBuild 명령 줄 구문을 사용하여 직접 프로젝트를 빌드 할 수 있습니다. 프로젝트를 빌드 할 때 다음 메시지 창 출력 탭에 빌드 결과가 표시됩니다. 빌드 이벤트를 입력하는 경우는 지정된 명령과 그 결과를 빌드 출력 창에 표시됩니다.
-
-MSBuild 명령 줄 구문은 다음과 같습니다.
-
-MSBuild <projectname> [/t:<target name>][/p:config=<configuration_name>][target:Deploy][/p:platform=<platform_node_name>]
+> ## MSBuild 명령을 사용하여 프로젝트 빌드 (embarcadero.com 원문)
+>
+> IDE는 Microsoft MSBuild 엔진을 사용하여 프로젝트를 빌드합니다. IDE가 모든 처리를 위해 MSBuild에 대한 지식이 없어도 프로젝트를 빌드 할 수 있습니다. 그러나 여기에서 설명하는 MSBuild 명령 줄 구문을 사용하여 직접 프로젝트를 빌드 할 수 있습니다. 프로젝트를 빌드 할 때 다음 메시지 창 출력 탭에 빌드 결과가 표시됩니다. 빌드 이벤트를 입력하는 경우는 지정된 명령과 그 결과를 빌드 출력 창에 표시됩니다.
+>
+> MSBuild 명령 줄 구문은 다음과 같습니다.
+>
+> MSBuild <projectname> [/t:<target name>][/p:config=<configuration_name>][target:Deploy][/p:platform=<platform_node_name>]
 
 
 
