@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.84.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="Demo post displaying the various ways of highlighting code in Markdown.">
+
+
+<meta property="og:description" content="Demo post displaying the various ways of highlighting code in Markdown.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Syntax Highlighting Post">
+<meta name="twitter:title" content="Syntax Highlighting Post">
+<meta property="og:url" content="http://example.org/post/2013-08-16-code-highlighting-post/">
+<meta property="twitter:url" content="http://example.org/post/2013-08-16-code-highlighting-post/">
+<meta property="og:site_name" content="개발과 운영을 위한 기록">
+<meta property="og:description" content="Demo post displaying the various ways of highlighting code in Markdown.">
+<meta name="twitter:description" content="Demo post displaying the various ways of highlighting code in Markdown.">
+<meta property="og:locale" content="en">
+
+  
+    <meta property="article:published_time" content="2013-08-16T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2016-06-01T15:27:45">
+  
+  
+  
+  
+    
+      <meta property="article:tag" content="sample post">
+    
+      <meta property="article:tag" content="code">
+    
+      <meta property="article:tag" content="highlighting">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>Syntax Highlighting Post</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="http://example.org/post/2013-08-16-code-highlighting-post/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">개발과 운영을 위한 기록</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="">
+  <div class="sidebar-container">
+    
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior=""
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Syntax Highlighting Post
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2013-08-16T00:00:00Z">
+        
+   16, 2013
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h3 id="gfm-code-blocks">GFM Code Blocks</h3>
+<p>GitHub Flavored Markdown <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a> are supported. To modify styling and highlight colors edit <code>/_sass/syntax.scss</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#container {
+  <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">-240</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#a6e22e">.highlight</span> {
+  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#a6e22e">font-family</span><span style="color:#f92672">:</span> $monospace;
+  <span style="color:#a6e22e">font-size</span><span style="color:#f92672">:</span> $type-size-7;
+  <span style="color:#a6e22e">line-height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">.8</span>;
+}</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% raw %}&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pagination&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
+  {% if page.previous %}
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ site.url }}{{ page.previous.url }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ page.previous.title }}&#34;</span>&gt;Previous article&lt;/<span style="color:#f92672">a</span>&gt;
+  {% endif %}
+  {% if page.next %}
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ site.url }}{{ page.next.url }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ page.next.title }}&#34;</span>&gt;Next article&lt;/<span style="color:#f92672">a</span>&gt;
+  {% endif %}
+&lt;/<span style="color:#f92672">nav</span>&gt;<span style="color:#75715e">&lt;!-- /.pagination --&gt;</span>{% endraw %}
+</code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{% raw %}&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pagination&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navigation&#34;</span>&gt;
+  {% if page.previous %}
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ site.url }}{{ page.previous.url }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ page.previous.title }}&#34;</span>&gt;Previous article&lt;/<span style="color:#f92672">a</span>&gt;
+  {% endif %}
+  {% if page.next %}
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ site.url }}{{ page.next.url }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ page.next.title }}&#34;</span>&gt;Next article&lt;/<span style="color:#f92672">a</span>&gt;
+  {% endif %}
+&lt;/<span style="color:#f92672">nav</span>&gt;<span style="color:#75715e">&lt;!-- /.pagination --&gt;</span>{% endraw %}</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">module</span> Jekyll
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TagIndex</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Page</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(site, base, dir, tag)
+      @site <span style="color:#f92672">=</span> site
+      @base <span style="color:#f92672">=</span> base
+      @dir <span style="color:#f92672">=</span> dir
+      @name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;index.html&#39;</span>
+      self<span style="color:#f92672">.</span>process(@name)
+      self<span style="color:#f92672">.</span>read_yaml(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>join(base, <span style="color:#e6db74">&#39;_layouts&#39;</span>), <span style="color:#e6db74">&#39;tag_index.html&#39;</span>)
+      self<span style="color:#f92672">.</span>data<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;tag&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> tag
+      tag_title_prefix <span style="color:#f92672">=</span> site<span style="color:#f92672">.</span>config<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;tag_title_prefix&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;Tagged: &#39;</span>
+      tag_title_suffix <span style="color:#f92672">=</span> site<span style="color:#f92672">.</span>config<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;tag_title_suffix&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;&amp;#8211;&#39;</span>
+      self<span style="color:#f92672">.</span>data<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;title&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>tag_title_prefix<span style="color:#e6db74">}#{</span>tag<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+      self<span style="color:#f92672">.</span>data<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;description&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;An archive of posts tagged </span><span style="color:#e6db74">#{</span>tag<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h3 id="code-blocks-in-lists">Code Blocks in Lists</h3>
+<p>Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., <code>1.</code>). Usually this will mean indenting 3 spaces instead of 4.</p>
+<ol>
+<li>
+<p>Do step 1.</p>
+</li>
+<li>
+<p>Now do this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_hi</span>(name)
+  puts <span style="color:#e6db74">&#34;Hi, </span><span style="color:#e6db74">#{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+print_hi(<span style="color:#e6db74">&#39;Tom&#39;</span>)
+<span style="color:#75715e">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span>
+</code></pre></div></li>
+<li>
+<p>Now you can do this.</p>
+</li>
+</ol>
+<h3 id="github-gist-embed">GitHub Gist Embed</h3>
+<p>An example of a Gist embed below.</p>
+<p>{% gist mmistakes/6589546 %}</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/sample-post/">sample post</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/code/">code</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/highlighting/">highlighting</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2013-10-26-background-image/" data-tooltip="Post with a Background Image">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2013-08-12-sample-link-post/" data-tooltip="Sample Link Post">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 개발과 운영을 위한 기록. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2013-10-26-background-image/" data-tooltip="Post with a Background Image">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2013-08-12-sample-link-post/" data-tooltip="Sample Link Post">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+    <h4 id="about-card-name"></h4>
+    
+    
+    
+  </div>
+</div>
+
+    
+
+    
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

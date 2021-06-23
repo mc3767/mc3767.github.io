@@ -1,42 +1,600 @@
----
-layout: post-index
-title: Latest Posts
-description: "Describe this nonsense."
-tags: [Jekyll, theme, themes, responsive, blog, modern]
-comments: false
-image:
-  feature: abstract-1.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
----
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.84.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
 
-{% for post in paginator.posts %}
-<article class="hentry">
-  <header>
-    {% if post.image.feature %}
-      <div class="entry-image-index">
-        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
-      </div><!-- /.entry-image -->
-    {% endif %}
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
-      {% if site.reading_time %}
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        {% include read-time-index.html %}
-      </span><!-- /.entry-reading-time -->
-      {% endif %}
-    </div><!-- /.entry-meta -->
-    {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
-    {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-    {% endif %}
-  </header>
-  <div class="entry-content">
-    {{ post.content }}
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
 
-{% include pagination.html %}
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="개발과 운영을 위한 기록">
+<meta name="twitter:title" content="개발과 운영을 위한 기록">
+<meta property="og:url" content="http://example.org/">
+<meta property="twitter:url" content="http://example.org/">
+<meta property="og:site_name" content="개발과 운영을 위한 기록">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en">
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>개발과 운영을 위한 기록</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+    
+
+    
+
+    <link rel="canonical" href="http://example.org/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">개발과 운영을 위한 기록</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="">
+  <div class="sidebar-container">
+    
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior=""
+        class="
+               hasCoverMetaIn
+               ">
+        <section class="postShorten-group main-content-wrap">
+          
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/">
+          PostgresSQL과 PostGis 3를 CentOS 7에 설치하기
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-10-05T00:00:00Z">
+        
+   5, 2020
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        I. PostgreSql 10 yum 설치 1. 버전에 맞는 저장소 설치 down load -- https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm $ rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm  2. 설치 $ yum install -y postgresql10-server postgresql10 postgresql10-contrib  3. DB 초기화 $ /usr/pgsql-10/bin/postgresql-10-setup initdb ==&gt; Initializing database ... OK  4. postgresql 구동 및 부팅시 자동 실행 $ systemctl start postgresql-10 $ systemctl status postgresql-10  5. 접속 확인 Postgresql에 접속. root 계정에서 아래의 명령어를 사용하여 postgres 계정에 접속하면 된다.
+      
+      <p>
+        <a href="http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/">
+          docker, docker-compose 설치
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-05-05T00:00:00Z">
+        
+   5, 2020
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        1. 잘못 설치된 버전이 있으면 삭제  $ yum remove docker \ docker-common \ docker-selinux \ docker-engine 2. 필수 패키지 설치  $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2 # docker repo를 등록한다. $ sudo yum-config-manager --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo $ yum package를 업데이트 $ sudo yum makecache fast 3. 설치  $ yum install docker-ce $ docker --version Docker version 19.03.10, build 9424aeaee9 4. Docker-compose 설치  $ curl -L https://github.
+      
+      <p>
+        <a href="http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2019-10-01-CentOS-RHEL-Fedora-vnStat-install/">
+          CentOS / RHEL / Fedora에서 vnStat (네트워크 모니터링 도구)를 설정하는 방법
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-01T00:00:00Z">
+        
+   1, 2019
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        네트워크 인터페이스에서 대역폭 (전송 및 수신)을 계산하고 자체 데이터베이스에 저장하는 유틸리티입니다.
+설치 및 설정 1. Yum을 사용하여 vnStat 패키지 설치 yum 명령 줄 유틸리티를 사용하여 시스템에 vnstat 패키지를 설치합니다.
+# yum install vnstat 2. 데이터베이스 초기화 vnStat는 모든 정보를 데이터베이스에 보관합니다.
+아래 명령을 사용하여 네트워크 인터페이스 용 데이터베이스를 생성합니다. 이 기사는 em1 인터페이스를 사용하고 있습니다. 필요에 따라 인터페이스 이름을 변경하십시오.
+# vnstat -u -i eth0 3. 크론 예약 vnStat는 cron 작업을 사용하여 데이터베이스를 업데이트합니다.
+      
+      <p>
+        <a href="http://example.org/post/2019-10-01-CentOS-RHEL-Fedora-vnStat-install/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2018-07-15-SSMS-design-view-description/">
+          SQL Server Management Studio의 테이블 디자이너에 설명(Description) 추가하기
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-07-15T00:00:00Z">
+        
+   15, 2018
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        SQL Server Management Studio의 테이블 디자이너에 설명(Description)이 보이도록 추가하는 방법입니다. 레지스트리 설정의 값을 변경하는 단계가 있습니다. SQL Server 2008  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\11.0\DataProject
+ SQL Server 2014  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\12.0\DataProject
+ SQL Server 2016  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\13.0\DataProject
+ 변경내용  SSVPropViewColumnsSQL70 변경전 1,2,6; 변경후 1,2,6,17,7,8,9,10; SSVPropViewColumnsSQL80 변경전 1,2,6; 변경후 1,2,6,17,7,8,9,10;
+ 주의사항 SSMS를 다시 시작해야 적용되며, SSMS 싫행중에 변경하면 적용되지 않고 수정전 값으로 바뀜.
+Property sequence:  Column Name Data Type Length Precision Scale Allow Nulls Default Value Identity Identity Seed Identity Increment Row GUID Nullable Condensed Type Not for Replication Formula Collation Description  
+      
+      <p>
+        <a href="http://example.org/post/2018-07-15-SSMS-design-view-description/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2018-07-13-Create_blog_with_jekyll/">
+          Jekyll로 블로그 만들기
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-07-13T00:00:00Z">
+        
+   13, 2018
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        Jekyll 이란게 뭐죠, 한 마디로? Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
+텍스트(마크다운) 파일로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, Liquid 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
+Jekyll 은 GitHub Pages 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 무료로 호스팅 할 수 있습니다.
+Ruby 설치하기 일단 Jekyll 자체가 하나의 Ruby 패키지 입니다.
+      
+      <p>
+        <a href="http://example.org/post/2018-07-13-Create_blog_with_jekyll/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2018-07-10-jekyll_Working_with_drafts/">
+          
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-07-10T00:00:00Z">
+        
+   10, 2018
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        
+      
+      <p>
+        <a href="http://example.org/post/2018-07-10-jekyll_Working_with_drafts/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2018-06-06-vscode-insatll/">
+          VS CODE 사용하기
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-06-06T00:00:00Z">
+        
+   6, 2018
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        Running VS Code on macOS Installation Download Visual Studio Code for macOS. Double-click on the downloaded archive to expand the contents. Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad. Add VS Code to your Dock by right-clicking on the icon and choosing Options, Keep in Dock. Launching from the Command Line You can also run VS Code from the terminal by typing &lsquo;code&rsquo; after adding it to the path:
+      
+      <p>
+        <a href="http://example.org/post/2018-06-06-vscode-insatll/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2018-02-19-Apache-HTTPS-HTTP-Redirect-Rewrite/">
+          http로 접속했을 경우 http로 redirect하는 방법
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-02-19T00:00:00Z">
+        
+   19, 2018
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        apache 2.x 서버에서 http로 접속했을 경우 http로 redirect하는 방법 - 필요 모듈 : mod_rewrite - httpd.conf 설정 RewriteEngine On RewriteCond %{HTTPS} !=on RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R,L] 예1. redirect https 직접 지정 (httpd.conf) &lt;VirtualHost *:80&gt; ServerName yourdomain.com Redirect permanent / https://yourdomain.com/ &lt;/VirtualHost&gt; &lt;VirtualHost _default_:443&gt; ServerName yourdomain.com DocumentRoot /usr/local/apache2/htdocs SSLEngine On ... &lt;/VirtualHost&gt; 예2. 모든 80 -&gt; 443으로 지정 (httpd.conf) &lt;VirtualHost *:80&gt; ServerName yourdomain.com RewriteEngine On RewriteCond %{HTTPS} !=on RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R,L] &lt;/VirtualHost&gt; &lt;VirtualHost _default_:443&gt; ServerName yourdomain.
+      
+      <p>
+        <a href="http://example.org/post/2018-02-19-Apache-HTTPS-HTTP-Redirect-Rewrite/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2017-01-05-git-command-line/">
+          깃 명령어 모음
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-01-05T00:00:00Z">
+        
+   5, 2017
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        git-usage 자주 사용하는 깃 명령어 모음
+구조 코드는 아래 세 단계에 걸쳐 저장된다.
+스테이징 -&gt; 커밋 -&gt; 원격저장소
+ git add {파일명} 으로 파일을 스테이징 상태에 넣는다. git commit 으로 스테이징 상태에 있는 모든 변경사항을 커밋한다. 여기까지가 로컬에서의 작업 git push 로 커밋된 저장소를 원격 저장소로 밀어넣는다.  기본 명령어 저장소 생성
+git init 원격 저장소로부터 복제
+git clone {url} 변경 사항 체크
+git status // 특정 파일 스테이징
+git add {파일명} 변경된 모든 파일 스테이징
+      
+      <p>
+        <a href="http://example.org/post/2017-01-05-git-command-line/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://example.org/post/2013-10-26-background-image/">
+          Post with a Background Image
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2013-10-26T00:00:00Z">
+        
+   26, 2013
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        Here be a sample post with a custom background image. To utilize this &ldquo;feature&rdquo; just add the following YAML to a post&rsquo;s front matter.
+image: background: filename.png This little bit of YAML makes the assumption that your background image asset is in the /images folder. If you place it somewhere else or are hotlinking from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.
+      
+      <p>
+        <a href="http://example.org/post/2013-10-26-background-image/" class="postShorten-excerpt_link link"></a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+          
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="/page/2/">
+              <span></span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+      
+      <li class="pagination-number"> </li>
+    </ul>
+  </div>
+
+
+        </section>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 개발과 운영을 위한 기록. 
+  </span>
+</footer>
+
+      </div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+    <h4 id="about-card-name"></h4>
+    
+    
+    
+  </div>
+</div>
+
+    
+
+    
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode on 개발과 운영을 위한 기록</title>
+    <link>http://example.org/tags/vscode/</link>
+    <description>Recent content in vscode on 개발과 운영을 위한 기록</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VS CODE 사용하기</title>
+      <link>http://example.org/post/2018-06-06-vscode-insatll/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-06-06-vscode-insatll/</guid>
+      <description>Running VS Code on macOS Installation Download Visual Studio Code for macOS. Double-click on the downloaded archive to expand the contents. Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad. Add VS Code to your Dock by right-clicking on the icon and choosing Options, Keep in Dock. Launching from the Command Line You can also run VS Code from the terminal by typing &amp;lsquo;code&amp;rsquo; after adding it to the path:</description>
+    </item>
+    
+  </channel>
+</rss>

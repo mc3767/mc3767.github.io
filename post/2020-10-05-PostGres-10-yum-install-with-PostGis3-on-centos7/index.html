@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.84.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="PostgresSQL 10과 PostGis 설치 방법">
+
+
+<meta property="og:description" content="PostgresSQL 10과 PostGis 설치 방법">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgresSQL과 PostGis 3를 CentOS 7에 설치하기">
+<meta name="twitter:title" content="PostgresSQL과 PostGis 3를 CentOS 7에 설치하기">
+<meta property="og:url" content="http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/">
+<meta property="twitter:url" content="http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/">
+<meta property="og:site_name" content="개발과 운영을 위한 기록">
+<meta property="og:description" content="PostgresSQL 10과 PostGis 설치 방법">
+<meta name="twitter:description" content="PostgresSQL 10과 PostGis 설치 방법">
+<meta property="og:locale" content="en">
+
+  
+    <meta property="article:published_time" content="2020-10-05T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2020-10-05T00:00:00">
+  
+  
+  
+  
+    
+      <meta property="article:tag" content="PostgresSQL10">
+    
+      <meta property="article:tag" content="postgis">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>PostgresSQL과 PostGis 3를 CentOS 7에 설치하기</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">개발과 운영을 위한 기록</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="">
+  <div class="sidebar-container">
+    
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior=""
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      PostgresSQL과 PostGis 3를 CentOS 7에 설치하기
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-10-05T00:00:00Z">
+        
+   5, 2020
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="i-postgresql-10-yum-설치">I. PostgreSql 10 yum 설치</h2>
+<h3 id="1-버전에-맞는-저장소-설치">1. 버전에 맞는 저장소 설치</h3>
+<pre><code>down load -- https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+$ rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+</code></pre>
+<h3 id="2-설치">2. 설치</h3>
+<pre><code>$ yum install -y postgresql10-server postgresql10 postgresql10-contrib
+</code></pre>
+<h3 id="3-db-초기화">3. DB 초기화</h3>
+<pre><code>$ /usr/pgsql-10/bin/postgresql-10-setup initdb
+==&gt; Initializing database ... OK
+</code></pre>
+<h3 id="4-postgresql-구동-및-부팅시-자동-실행">4. postgresql 구동 및 부팅시 자동 실행</h3>
+<pre><code>$ systemctl start postgresql-10
+$ systemctl status postgresql-10
+</code></pre>
+<h3 id="5-접속-확인">5. 접속 확인</h3>
+<pre><code>Postgresql에 접속. root 계정에서 아래의 명령어를 사용하여 postgres 계정에 접속하면 된다.
+
+$ su postgres
+$ cd /usr/pgsql-10/bin
+$ psql
+</code></pre>
+<h3 id="6-패스워드-변경">6. 패스워드 변경</h3>
+<pre><code>postgres=# lter user postgres with password 'postgres';
+ALTER USER
+</code></pre>
+<h3 id="7-설정파일-수정">7. 설정파일 수정</h3>
+<h4 id="postgresqlconf-파일-수정">postgresql.conf 파일 수정</h4>
+<pre><code>#listen_addresses = 'localhost' &lt;-------- 주석을 제거하고 localhost를 \* 변경
+#max_connections = 100 &lt;-------- 주석을 제거하고 max_connections = 2000 내용 변경
+#shared_buffers = 128MB &lt;-------- 주석을 제거하고 shared_buffers = 128000MB 내용 변경
+#work_mem = 4MB &lt;-------- 주석을 제거하고 work_mem = 51200MB
+#max_files_per_process = 1000 &lt;-------- 주석을 제거하고 max_files_per_process = 15000
+</code></pre>
+<h4 id="pg_hbaconf-파일-수정">pg_hba.conf 파일 수정</h4>
+<pre><code>$ vi /home/postgres/10/data/pg_hba.conf
+설치서버에서 접속시 내용 수정
+local all all trust &lt;------- trust 를 password 변경
+외부에서 호스트로 접속시 내용 수정
+host all all 127.0.0.1/32 trust &lt;------- 127.0.0.1/32 를 0.0.0.0/0 변경, trust 를 password 변경
+</code></pre>
+<h2 id="ii-postgis-300-소스설치">II. PostGis 3.0.0 소스설치</h2>
+<pre><code>사전 필수 항목
+gcc
+gcc-c++
+make
+proj 4.9 이상
+geos 3.7 이상
+libxml2 2.5이상
+json-c 0.9이상
+gdal 1.9이상
+</code></pre>
+<h3 id="1-yum-repository-update-이후-없는-패키지-설치">1. Yum Repository Update 이후 없는 패키지 설치</h3>
+<pre><code>rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uvh https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+아래 진행하면서 없어서 문제가 된 패키지 모음
+
+yum group install &quot;Development Tools&quot;
+yum install proj.x86_64
+yum install libicu-devel
+yum install libxml2-devel
+yum install gdal23.x86_64
+yum install geos37.x86_64
+yum install bzip2
+yum install gcc
+yum install gcc-c++
+yum install json-c-devel
+yum install build-essential libtool
+yum install json-c-devel
+yum install SFCGAL-devel
+</code></pre>
+<h3 id="2-postgis-devel-패키지-설치">2. postgis devel 패키지 설치</h3>
+<pre><code>download
+https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/postgresql10-devel-10.14-1PGDG.rhel7.x86_64.rpm
+https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/postgresql10-libs-10.14-1PGDG.rhel7.x86_64.rpm
+
+rpm -ivh ----.rpm
+</code></pre>
+<h3 id="3-geos-373-다운로드-및-설치">3. geos-3.7.3 다운로드 및 설치</h3>
+<pre><code>$ wget http://download.osgeo.org/geos/geos-3.7.3.tar.bz2
+$ tar -xvf geos-3.7.3.tar.bz2
+$ cd geos-3.7.3
+$ ./configure --prefix=/usr/local/geos
+$ make
+$ make install
+</code></pre>
+<h3 id="4-proj-493-다운로드">4. proj-4.9.3 다운로드</h3>
+<pre><code>$ wget http://download.osgeo.org/proj/proj-4.9.3.tar.gz
+$ tar -xvf proj-4.9.3.tar.gz
+$ cd proj-4.9.3
+$ ./configure --prefix=/usr/local/proj &amp;&amp; make &amp;&amp; make install
+( error 발생시 #autoreconf -f -i )
+</code></pre>
+<h3 id="5-gdal-243-다운로드">5. gdal-2.4.3 다운로드</h3>
+<pre><code>$ wget http://download.osgeo.org/gdal/2.4.3/gdal-2.4.3.tar.gz
+$ tar -xvf gdal-2.4.3.tar.gz
+$ cd gdal-2.4.3
+$ ./configure --prefix=/usr/local/gdal
+$ make &amp;&amp; make install
+</code></pre>
+<h3 id="6-postgis-소스-컴파일">6. postgis 소스 컴파일</h3>
+<pre><code>$ wget http://download.osgeo.org/postgis/source/postgis-3.0.0.tar.gz
+$ tar -xvf postgis-3.0.0.tar.gz
+$ cd /usr/local/src/postgis-3.0.0
+
+$ ./configure --prefix=/usr/pgsql-10/postgis --with-pgconfig=/usr/pgsql-10/bin/pg_config --with-geosconfig=/usr/local/geos/bin/geos-config -with-projdir=/usr/local/proj --with-gdalconfig=/usr/local/gdal/bin/gdal-config
+$ make
+$ make install
+</code></pre>
+<h3 id="7-postgis-확장-및-배포-구축">7. PostGIS 확장 및 배포 구축</h3>
+<pre><code>$ cd /usr/local/src/postgis-3.0.0/extensions/postgis
+$ make clean
+$ make
+$ make install
+
+$ cd ../postgis_topology
+$ make clean
+$ make
+$ make install
+
+$ cd ../postgis_tiger_geocoder
+$ make clean
+$ make
+$ make install
+</code></pre>
+<h3 id="8-확장">8. 확장</h3>
+<pre><code>다음의 쿼리를 실행하여 installed_version을 확인한다.
+postgres=# SELECT name, default_version,installed_version FROM pg_available_extensions WHERE name LIKE 'postgis%' ;
+
+name | default_version | installed_version
+------------------------+-----------------+-------------------
+postgis_topology | 3.0.0 |
+postgis_tiger_geocoder | 3.0.0 |
+postgis | 3.0.0 |
+(3 rows)
+
+postgres=# CREATE EXTENSION postgis;
+postgres=# CREATE EXTENSION postgis_topology;
+
+postgres=# CREATE EXTENSION postgis; &lt;-----정상적으로 불러오지 못함
+postgres=# CREATE EXTENSION postgis_topology; &lt;-----정상적으로 불러오지 못함
+
+위 애러내용 해결 -&gt; /usr/local/lib 폴더의 파일과 하위 폴더를 /usr/pgsql-10/lib로 복사하여 다시실행한 후 확인
+
+(설치 위치가 틀리면 proj-4.8.0/geos-3.5.1/gdal-1.9.2 설치 위치를 확인하여 해당 내용의 lib하위 내용 복사)
+
+$ cp -p -r /usr/local/proj/lib/\* /usr/pgsql-10/lib/
+$ cp -p -r /usr/local/geos/lib/\* /usr/pgsql-10/lib
+$ cp -p -r /usr/local/gdal/lib/\* /usr/pgsql-10/lib
+
+postgres=# CREATE EXTENSION postgis;
+postgres=# CREATE EXTENSION postgis_topology;
+postgres=# CREATE EXTENSION postgis_tiger_geocoder CASCADE;
+</code></pre>
+<h3 id="9-최종-확인">9 최종 확인</h3>
+<pre><code>postgres=# select st_astext(st_transform(st_setsrid(st_makepoint(126.976796611537, 37.5802322231513),4326),900913));
+
+아래와 같이 값이 나오는지 확인
+&quot;POINT(14134992.3413574 4520295.24555993)&quot;
+</code></pre>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/PostgresSQL10/">PostgresSQL10</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/postgis/">postgis</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2020-05-05-docker-docker-compose-install-on-centos7/" data-tooltip="docker, docker-compose 설치">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 개발과 운영을 위한 기록. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/post/2020-05-05-docker-docker-compose-install-on-centos7/" data-tooltip="docker, docker-compose 설치">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+    <h4 id="about-card-name"></h4>
+    
+    
+    
+  </div>
+</div>
+
+    
+
+    
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

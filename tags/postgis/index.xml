@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgis on 개발과 운영을 위한 기록</title>
+    <link>http://example.org/tags/postgis/</link>
+    <description>Recent content in postgis on 개발과 운영을 위한 기록</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/postgis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgresSQL과 PostGis 3를 CentOS 7에 설치하기</title>
+      <link>http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/</guid>
+      <description>I. PostgreSql 10 yum 설치 1. 버전에 맞는 저장소 설치 down load -- https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm $ rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm  2. 설치 $ yum install -y postgresql10-server postgresql10 postgresql10-contrib  3. DB 초기화 $ /usr/pgsql-10/bin/postgresql-10-setup initdb ==&amp;gt; Initializing database ... OK  4. postgresql 구동 및 부팅시 자동 실행 $ systemctl start postgresql-10 $ systemctl status postgresql-10  5. 접속 확인 Postgresql에 접속. root 계정에서 아래의 명령어를 사용하여 postgres 계정에 접속하면 된다.</description>
+    </item>
+    
+  </channel>
+</rss>

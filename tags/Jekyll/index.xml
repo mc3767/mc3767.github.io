@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on 개발과 운영을 위한 기록</title>
+    <link>http://example.org/tags/Jekyll/</link>
+    <description>Recent content in Jekyll on 개발과 운영을 위한 기록</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/Jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jekyll로 블로그 만들기</title>
+      <link>http://example.org/post/2018-07-13-Create_blog_with_jekyll/</link>
+      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-07-13-Create_blog_with_jekyll/</guid>
+      <description>Jekyll 이란게 뭐죠, 한 마디로? Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
+텍스트(마크다운) 파일로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, Liquid 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
+Jekyll 은 GitHub Pages 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 무료로 호스팅 할 수 있습니다.
+Ruby 설치하기 일단 Jekyll 자체가 하나의 Ruby 패키지 입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

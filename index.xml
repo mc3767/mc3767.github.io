@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>개발과 운영을 위한 기록</title>
+    <link>http://example.org/</link>
+    <description>Recent content on 개발과 운영을 위한 기록</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgresSQL과 PostGis 3를 CentOS 7에 설치하기</title>
+      <link>http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2020-10-05-PostGres-10-yum-install-with-PostGis3-on-centos7/</guid>
+      <description>I. PostgreSql 10 yum 설치 1. 버전에 맞는 저장소 설치 down load -- https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm $ rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm  2. 설치 $ yum install -y postgresql10-server postgresql10 postgresql10-contrib  3. DB 초기화 $ /usr/pgsql-10/bin/postgresql-10-setup initdb ==&amp;gt; Initializing database ... OK  4. postgresql 구동 및 부팅시 자동 실행 $ systemctl start postgresql-10 $ systemctl status postgresql-10  5. 접속 확인 Postgresql에 접속. root 계정에서 아래의 명령어를 사용하여 postgres 계정에 접속하면 된다.</description>
+    </item>
+    
+    <item>
+      <title>docker, docker-compose 설치</title>
+      <link>http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/</guid>
+      <description>1. 잘못 설치된 버전이 있으면 삭제  $ yum remove docker \ docker-common \ docker-selinux \ docker-engine 2. 필수 패키지 설치  $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2 # docker repo를 등록한다. $ sudo yum-config-manager --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo $ yum package를 업데이트 $ sudo yum makecache fast 3. 설치  $ yum install docker-ce $ docker --version Docker version 19.03.10, build 9424aeaee9 4. Docker-compose 설치  $ curl -L https://github.</description>
+    </item>
+    
+    <item>
+      <title>CentOS / RHEL / Fedora에서 vnStat (네트워크 모니터링 도구)를 설정하는 방법</title>
+      <link>http://example.org/post/2019-10-01-CentOS-RHEL-Fedora-vnStat-install/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2019-10-01-CentOS-RHEL-Fedora-vnStat-install/</guid>
+      <description>네트워크 인터페이스에서 대역폭 (전송 및 수신)을 계산하고 자체 데이터베이스에 저장하는 유틸리티입니다.
+설치 및 설정 1. Yum을 사용하여 vnStat 패키지 설치 yum 명령 줄 유틸리티를 사용하여 시스템에 vnstat 패키지를 설치합니다.
+# yum install vnstat 2. 데이터베이스 초기화 vnStat는 모든 정보를 데이터베이스에 보관합니다.
+아래 명령을 사용하여 네트워크 인터페이스 용 데이터베이스를 생성합니다. 이 기사는 em1 인터페이스를 사용하고 있습니다. 필요에 따라 인터페이스 이름을 변경하십시오.
+# vnstat -u -i eth0 3. 크론 예약 vnStat는 cron 작업을 사용하여 데이터베이스를 업데이트합니다.</description>
+    </item>
+    
+    <item>
+      <title>SQL Server Management Studio의 테이블 디자이너에 설명(Description) 추가하기</title>
+      <link>http://example.org/post/2018-07-15-SSMS-design-view-description/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-07-15-SSMS-design-view-description/</guid>
+      <description>SQL Server Management Studio의 테이블 디자이너에 설명(Description)이 보이도록 추가하는 방법입니다. 레지스트리 설정의 값을 변경하는 단계가 있습니다. SQL Server 2008  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\11.0\DataProject
+ SQL Server 2014  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\12.0\DataProject
+ SQL Server 2016  HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\13.0\DataProject
+ 변경내용  SSVPropViewColumnsSQL70 변경전 1,2,6; 변경후 1,2,6,17,7,8,9,10; SSVPropViewColumnsSQL80 변경전 1,2,6; 변경후 1,2,6,17,7,8,9,10;
+ 주의사항 SSMS를 다시 시작해야 적용되며, SSMS 싫행중에 변경하면 적용되지 않고 수정전 값으로 바뀜.
+Property sequence:  Column Name Data Type Length Precision Scale Allow Nulls Default Value Identity Identity Seed Identity Increment Row GUID Nullable Condensed Type Not for Replication Formula Collation Description  </description>
+    </item>
+    
+    <item>
+      <title>Jekyll로 블로그 만들기</title>
+      <link>http://example.org/post/2018-07-13-Create_blog_with_jekyll/</link>
+      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-07-13-Create_blog_with_jekyll/</guid>
+      <description>Jekyll 이란게 뭐죠, 한 마디로? Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
+텍스트(마크다운) 파일로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, Liquid 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
+Jekyll 은 GitHub Pages 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 무료로 호스팅 할 수 있습니다.
+Ruby 설치하기 일단 Jekyll 자체가 하나의 Ruby 패키지 입니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/post/2018-07-10-jekyll_Working_with_drafts/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-07-10-jekyll_Working_with_drafts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VS CODE 사용하기</title>
+      <link>http://example.org/post/2018-06-06-vscode-insatll/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-06-06-vscode-insatll/</guid>
+      <description>Running VS Code on macOS Installation Download Visual Studio Code for macOS. Double-click on the downloaded archive to expand the contents. Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad. Add VS Code to your Dock by right-clicking on the icon and choosing Options, Keep in Dock. Launching from the Command Line You can also run VS Code from the terminal by typing &amp;lsquo;code&amp;rsquo; after adding it to the path:</description>
+    </item>
+    
+    <item>
+      <title>http로 접속했을 경우 http로 redirect하는 방법</title>
+      <link>http://example.org/post/2018-02-19-Apache-HTTPS-HTTP-Redirect-Rewrite/</link>
+      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-02-19-Apache-HTTPS-HTTP-Redirect-Rewrite/</guid>
+      <description>apache 2.x 서버에서 http로 접속했을 경우 http로 redirect하는 방법 - 필요 모듈 : mod_rewrite - httpd.conf 설정 RewriteEngine On RewriteCond %{HTTPS} !=on RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R,L] 예1. redirect https 직접 지정 (httpd.conf) &amp;lt;VirtualHost *:80&amp;gt; ServerName yourdomain.com Redirect permanent / https://yourdomain.com/ &amp;lt;/VirtualHost&amp;gt; &amp;lt;VirtualHost _default_:443&amp;gt; ServerName yourdomain.com DocumentRoot /usr/local/apache2/htdocs SSLEngine On ... &amp;lt;/VirtualHost&amp;gt; 예2. 모든 80 -&amp;gt; 443으로 지정 (httpd.conf) &amp;lt;VirtualHost *:80&amp;gt; ServerName yourdomain.com RewriteEngine On RewriteCond %{HTTPS} !=on RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R,L] &amp;lt;/VirtualHost&amp;gt; &amp;lt;VirtualHost _default_:443&amp;gt; ServerName yourdomain.</description>
+    </item>
+    
+    <item>
+      <title>깃 명령어 모음</title>
+      <link>http://example.org/post/2017-01-05-git-command-line/</link>
+      <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2017-01-05-git-command-line/</guid>
+      <description>git-usage 자주 사용하는 깃 명령어 모음
+구조 코드는 아래 세 단계에 걸쳐 저장된다.
+스테이징 -&amp;gt; 커밋 -&amp;gt; 원격저장소
+ git add {파일명} 으로 파일을 스테이징 상태에 넣는다. git commit 으로 스테이징 상태에 있는 모든 변경사항을 커밋한다. 여기까지가 로컬에서의 작업 git push 로 커밋된 저장소를 원격 저장소로 밀어넣는다.  기본 명령어 저장소 생성
+git init 원격 저장소로부터 복제
+git clone {url} 변경 사항 체크
+git status // 특정 파일 스테이징
+git add {파일명} 변경된 모든 파일 스테이징</description>
+    </item>
+    
+    <item>
+      <title>Post with a Background Image</title>
+      <link>http://example.org/post/2013-10-26-background-image/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-10-26-background-image/</guid>
+      <description>Here be a sample post with a custom background image. To utilize this &amp;ldquo;feature&amp;rdquo; just add the following YAML to a post&amp;rsquo;s front matter.
+image: background: filename.png This little bit of YAML makes the assumption that your background image asset is in the /images folder. If you place it somewhere else or are hotlinking from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.</description>
+    </item>
+    
+    <item>
+      <title>Syntax Highlighting Post</title>
+      <link>http://example.org/post/2013-08-16-code-highlighting-post/</link>
+      <pubDate>Fri, 16 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-08-16-code-highlighting-post/</guid>
+      <description>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.1
+GFM Code Blocks GitHub Flavored Markdown fenced code blocks are supported.</description>
+    </item>
+    
+    <item>
+      <title>Sample Link Post</title>
+      <link>http://example.org/post/2013-08-12-sample-link-post/</link>
+      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-08-12-sample-link-post/</guid>
+      <description>This theme supports link posts, made famous by John Gruber. To use, just add link: http://url-you-want-linked to the post&amp;rsquo;s YAML front matter and you&amp;rsquo;re done.</description>
+    </item>
+    
+    <item>
+      <title>A Post with a Video</title>
+      <link>http://example.org/post/2013-06-25-video-post/</link>
+      <pubDate>Tue, 25 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-06-25-video-post/</guid>
+      <description>Video embeds are responsive and scale with the width of the main content block with the help of FitVids.
+&amp;lt;iframe width=&amp;#34;560&amp;#34; height=&amp;#34;315&amp;#34; src=&amp;#34;//www.youtube.com/embed/SU3kYxJmWuQ&amp;#34; frameborder=&amp;#34;0&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Post with Large Feature Image and Text</title>
+      <link>http://example.org/post/2013-05-23-readability-feature-post/</link>
+      <pubDate>Thu, 23 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-05-23-readability-feature-post/</guid>
+      <description>This is a sample post with a large feature image up top and tons of text. Odio ad blue bottle vinyl, 90&amp;rsquo;s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney&amp;rsquo;s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.</description>
+    </item>
+    
+    <item>
+      <title>A Post with Images</title>
+      <link>http://example.org/post/2013-05-22-sample-post-images/</link>
+      <pubDate>Wed, 22 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2013-05-22-sample-post-images/</guid>
+      <description>Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use figure with the appropriate class. Each instance of figure is auto-numbered and displayed in the caption.
+Figures (for images or video) One Up Two Up Apply the half class like so to display two images side by side that share the same caption.</description>
+    </item>
+    
+    <item>
+      <title>Testing Readability with a Bunch of Text</title>
+      <link>http://example.org/post/2012-05-22-readability-post/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2012-05-22-readability-post/</guid>
+      <description>Portland in shoreditch Vice, labore typewriter pariatur hoodie fap sartorial Austin. Pinterest literally occupy Schlitz forage. Odio ad blue bottle vinyl, 90&amp;rsquo;s narwhal commodo bitters pour-over nostrud. Ugh est hashtag in, fingerstache adipisicing laboris esse Pinterest shabby chic Portland. Shoreditch bicycle rights anim, flexitarian laboris put a bird on it vinyl cupidatat narwhal. Hashtag artisan skateboard, flannel Bushwick nesciunt salvia aute fixie do plaid post-ironic dolor McSweeney&amp;rsquo;s. Cliche pour-over chambray nulla four loko skateboard sapiente hashtag.</description>
+    </item>
+    
+    <item>
+      <title>SQL 복원시 사용자 연결하기</title>
+      <link>http://example.org/post/2011-05-05-How-to-fix-orphaned-SQL-Server-users/</link>
+      <pubDate>Thu, 05 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2011-05-05-How-to-fix-orphaned-SQL-Server-users/</guid>
+      <description>&amp;ldquo;SQL 백업에서 복원하거나 디비파일을 연결하면 사용자 연결이 필요하다&amp;rdquo; Share on PinboardShare on HackerNewsShare on TwitterShare on FacebookShare on Reddit Summary When you restore a Microsoft SQL Server database on a different machine, you cannot access the database until you fix the permissions.
+Detail The problem is that the user in the database is an &amp;ldquo;orphan&amp;rdquo;. This means that there is no login id or password associated with the user. This is true even if there is a login id that matches the user, since there is a GUID (called a SID in Microsoft-speak) that has to match as well.</description>
+    </item>
+    
+    <item>
+      <title>Sample Post</title>
+      <link>http://example.org/post/2011-03-10-sample-post/</link>
+      <pubDate>Thu, 10 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2011-03-10-sample-post/</guid>
+      <description>Below is just about everything you&amp;rsquo;ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Body text Lorem ipsum dolor sit amet, test link adipiscing elit. This is strong. Nullam dignissim convallis est. Quisque aliquam.
+![Smithsonian Image]({{ site.url }}/images/3953273590_704e3899d5_m.jpg) {: .image-right}
+This is emphasized. Donec faucibus. Nunc iaculis suscipit dui.</description>
+    </item>
+    
+  </channel>
+</rss>

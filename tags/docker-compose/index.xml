@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker-compose on 개발과 운영을 위한 기록</title>
+    <link>http://example.org/tags/docker-compose/</link>
+    <description>Recent content in docker-compose on 개발과 운영을 위한 기록</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker, docker-compose 설치</title>
+      <link>http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2020-05-05-docker-docker-compose-install-on-centos7/</guid>
+      <description>1. 잘못 설치된 버전이 있으면 삭제  $ yum remove docker \ docker-common \ docker-selinux \ docker-engine 2. 필수 패키지 설치  $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2 # docker repo를 등록한다. $ sudo yum-config-manager --add-repo \ https://download.docker.com/linux/centos/docker-ce.repo $ yum package를 업데이트 $ sudo yum makecache fast 3. 설치  $ yum install docker-ce $ docker --version Docker version 19.03.10, build 9424aeaee9 4. Docker-compose 설치  $ curl -L https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
